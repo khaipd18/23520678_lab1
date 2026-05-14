@@ -1,6 +1,6 @@
 resource "aws_default_security_group" "default" {
   vpc_id = var.vpc_id
-  tags = { Name = "Lab01-Default-SG" }
+  tags   = { Name = "Lab01-Default-SG" }
 }
 
 resource "aws_security_group" "public_sg" {
@@ -12,7 +12,7 @@ resource "aws_security_group" "public_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [var.my_ip] 
+    cidr_blocks = [var.my_ip]
   }
 
   egress {
